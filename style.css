@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f6fa;
+}
+
+header {
+    background: #1b3a6f;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.sidebar {
+    width: 220px;
+    background: #12284e;
+    position: fixed;
+    top: 80px;
+    bottom: 0;
+    padding-top: 20px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 15px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.sidebar a:hover {
+    background: #1f3d73;
+}
+
+.content {
+    margin-left: 240px;
+    padding: 20px;
+}
+
+.toolbar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.toolbar input, select, button {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #bbb;
+}
+
+#reportContainer {
+    background: white;
+    height: 500px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Table Styling */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.data-table th {
+    background: #20407b;
+    color: white;
+    padding: 10px;
+}
+
+.data-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.data-table tr:nth-child(even) {
+    background: #f2f6ff;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background: #1a1a1a;
+    color: white;
+}
+
+footer {
+    text-align: center;
+    padding: 12px;
+    background: #1b3a6f;
+    color: white;
+    margin-top: 20px;
+}
