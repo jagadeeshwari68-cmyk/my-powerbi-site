@@ -3,35 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample Website</title>
-    styles.css
+    <title>Power BI Embedded Dashboard</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Power BI Client Script -->
+    <script src="https://cdn.jsdelivr.net/npm/powerbi-client/dist/powerbi.min.js"></script>
 </head>
+
 <body>
-    <header>
-        <div class="container">
-            <h1 class="logo">MySite</h1>
-            <nav>
-                <ul class="nav-links" id="navLinks">
-                    <li>#homeHome</a></li>
-                    <li>#aboutAbout</a></li>
-                    <li>#contactContact</a></li>
-                </ul>
-                <span class="menu-icon" id="menuIcon">&#9776;</span>
-            </nav>
-        </div>
-    </header>
-    <section id="home" class="welcome">
-        <div class="container">
-            <h2>Welcome to My Site!</h2>
-            <p>This is a simple sample website created for demonstration purposes. Resize your browser window to see the responsive design in action!</p>
-            <button onclick="sayHello()">Click Me</button>
-        </div>
-    </section>
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 MySite. All rights reserved.</p>
-        </div>
-    </footer>
-    script.js</script>
+
+<header>My Power BI Dashboard</header>
+
+<div class="sidebar">
+    <a href="#">Home</a>
+    <a href="#">Sales Report</a>
+    <a href="#">Population Report</a>
+    <a href="#">Geographics View</a>
+    <a href="#">Settings</a>
+</div>
+
+<div class="content">
+
+    <div class="toolbar">
+        <input type="text" placeholder="Search...">
+        <button class="theme-toggle" onclick="toggleTheme()">🌓 Theme</button>
+        <select>
+            <option>Yearly View</option>
+            <option>Country View</option>
+            <option>Top 10 View</option>
+        </select>
+
+        <button onclick="refreshReport()">🔄 Refresh</button>
+        <button onclick="fullscreen()">⛶ Fullscreen</button>
+    </div>
+
+    <!-- Power BI Container with Sample Data -->
+    <div id="reportContainer">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Country</th>
+                    <th>Year</th>
+                    <th>Population</th>
+                    <th>Growth %</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>India</td><td>2024</td><td>1,428,627,663</td><td>1.0%</td></tr>
+                <tr><td>USA</td><td>2024</td><td>339,996,563</td><td>0.5%</td></tr>
+                <tr><td>China</td><td>2024</td><td>1,412,175,000</td><td>-0.3%</td></tr>
+                <tr><td>Brazil</td><td>2024</td><td>216,422,446</td><td>0.8%</td></tr>
+                <tr><td>UK</td><td>2024</td><td>68,138,484</td><td>0.6%</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<footer>
+    © 2025 | Power BI Embedded App | All Rights Reserved
+</footer>
+
+<script>
+    const embedConfig = {
+        type: "report",
+        id: "YOUR_REPORT_ID",
+        embedUrl: "YOUR_EMBED_URL",
+        accessToken: "YOUR_ACCESS_TOKEN",
+        tokenType: window['powerbi-client'].models.TokenType.Embed
+    };
+
+    const container = document.getElementById("reportContainer");
+
+    try {
+        powerbi.embed(container, embedConfig);
+    } catch {
+        console.log("Power BI not configured — sample data shown.");
+    }
+
+    function refreshReport() {
+        alert("Power BI refresh will work after credentials are added.");
+    }
+
+    function fullscreen() {
+        container.requestFullscreen();
+    }
+
+    function toggleTheme() {
+        document.body.classList.toggle("dark-mode");
+    }
+</script>
 </body>
-</html>
+</html
+
