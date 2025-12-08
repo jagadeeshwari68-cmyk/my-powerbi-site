@@ -23,15 +23,20 @@
 <div class="content">
 
     <div class="toolbar">
-        <input type="text" placeholder="Search...">
-        <button onclick="toggleTheme()">🌓 Theme</button>
-        <select>
-            <option>Yearly View</option>
-            <option>Country View</option>
-            <option>Top 10 View</option>
-        </select>
-        <button onclick="refreshReport()">🔄 Refresh</button>
-        <button onclick="fullscreen()">⛶ Fullscreen</button>
+       <label for="search" class="visually-hidden">Search dashboard</label>
+    <input id="search" type="text" placeholder="Search..." aria-label="Search dashboard">
+
+    <button class="theme-toggle" aria-label="Toggle theme light or dark" onclick="toggleTheme()">🌓 Theme</button>
+
+    <label for="reportView" class="visually-hidden">Select report view type</label>
+    <select id="reportView" aria-label="Report view type selector">
+        <option>Yearly View</option>
+        <option>Country View</option>
+        <option>Top 10 View</option>
+    </select>
+    <button onclick="refreshReport()" aria-label="Refresh the report">🔄 Refresh</button>
+
+    <button onclick="fullscreen()" aria-label="Enter fullscreen mode">⛶ Fullscreen</button>
     </div>
 
     <div id="reportContainer">
@@ -61,3 +66,4 @@ function toggleTheme() {
 
 </body>
 </html>
+
